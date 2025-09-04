@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
+    "export": "next export",
     "build:pages": "next build && next export",
     "preview:pages": "npx serve out",
     "start": "next start",
