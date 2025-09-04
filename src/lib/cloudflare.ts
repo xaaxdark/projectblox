@@ -1,9 +1,9 @@
-import { Project, ProjectStep, Category, User, UserProgress } from '@/types';
+// import { Project, ProjectStep, Category, User, UserProgress } from '@/types';
 
-interface CloudflareResponse<T = any> {
+interface CloudflareResponse<T = unknown> {
   result: T[];
   success: boolean;
-  errors: any[];
+  errors: unknown[];
 }
 
 export class CloudflareClient {
@@ -17,7 +17,7 @@ export class CloudflareClient {
     this.databaseId = process.env.CLOUDFLARE_DATABASE_ID!;
   }
 
-  async query(sql: string, params: any[] = []) {
+  async query(sql: string, params: unknown[] = []) {
     const response = await fetch(
       `https://api.cloudflare.com/client/v4/accounts/${this.accountId}/d1/database/${this.databaseId}/query`,
       {
@@ -52,7 +52,7 @@ export class CloudflareClient {
     offset?: number;
   } = {}) {
     let sql = 'SELECT p.*, c.name as category_name, c.icon as category_icon FROM projects p JOIN categories c ON p.category_id = c.id WHERE p.is_published = TRUE';
-    const params: any[] = [];
+    const params: unknown[] = [];
 
     if (options.categoryId) {
       sql += ' AND p.category_id = ?';

@@ -34,11 +34,11 @@ export default function SubmitPage() {
 
         {/* Coming Soon */}
         <div className="bg-white rounded-lg border border-gray-200 p-12 text-center">
-          <div className="text-6xl mb-6">🚧</div>
+          <div className="text-6xl mb-6" role="img" aria-label="Construction">🚧</div>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Coming Soon!</h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            We're working hard to build an amazing project submission system. 
-            Soon you'll be able to share your creative projects with step-by-step guides, 
+            We are working hard to build an amazing project submission system. 
+            Soon you will be able to share your creative projects with step-by-step guides, 
             materials lists, and beautiful photos.
           </p>
 
